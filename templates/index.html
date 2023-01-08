@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang=”en”>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Metaphor Suggestion Site</title>
+        <style>
+            .metaphor-page-container .logo-boy{
+                width: 300px;
+                height: 300px
+            }
+            .metaphor-page-container .logo-girl{
+                width: 128px;
+                height: 300px
+            }
+            .metaphor-page-container .poster{
+                background-color: #dfe6e1;
+            }
+            @media (min-width: 576px){
+            .metaphor-page-container .search-container .row{
+                width: 540px;
+            }
+            }
+            @media (min-width: 576px){
+            .metaphor-page-container .details{
+                width: 400px;
+            }
+            }
+          </style>
+    </head>
+    <script>
+    </script>
+    <body>
+        <div class="metaphor-page-container container-fluid pb-3">
+            <div class="row poster align-items-center">
+                <div class="col-7 text-center">
+                    <h1 class="mb-4">Welcome to Metaphorize</h1>
+                    <h2 class="details mx-auto text-muted">We can search <strong class="text-primary"> Metaphors</strong> for your songs for you.</h2>
+                </div>
+                <div class="col-5 pl-5">
+                    <img class="logo-girl img-fluid" src="{{girl_image}}">
+                    <img class="logo-boy img-fluid" src="{{ boy_image }}">
+                </div>
+            </div>
+            <div class="search-container py-5">
+                <div class="row mx-auto">
+                    <div class="col">
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Source">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Target">
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-danger">Search</button>
+                    </div>
+                </div>
+            </div>   
+            {% if hits %}
+            <h1>Helloooooooo</h1>    
+            {% endif %} 
+        </div>
+    </body>
+</html>
