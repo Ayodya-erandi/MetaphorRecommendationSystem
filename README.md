@@ -34,12 +34,12 @@ Following 10 metadata with the metaphors fo 150 songs are used to create the ind
 
 * Advanced Search
     - Addition to the normal search, you can filter songs by,
-        singer
-        genre
+        - singer
+        - genre
     
-    -Additionally, 
-        you can include word in metaphor
-        you can exclude word in metaphor
+    - Additionally, 
+        - you can include word in metaphor
+        - you can exclude word in metaphor
 
 ## Indexing techniques
 
