@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <title>Metaphor Suggestion Site</title>
         <style>
             .metaphor-page-container .logo-boy{
@@ -18,9 +19,19 @@
             .metaphor-page-container .poster{
                 background-color: #dfe6e1;
             }
+            @media (min-width: 768px){
+            .metaphor-page-container .search{
+                width: 700px;
+            }
+            }
             @media (min-width: 576px){
-            .metaphor-page-container .search-container .row{
+            .metaphor-page-container .twoselected{
                 width: 540px;
+            }
+            }
+            @media (min-width: 992px){
+            .metaphor-page-container .moreselected{
+                width: 400px;
             }
             }
             @media (min-width: 576px){
@@ -28,13 +39,31 @@
                 width: 400px;
             }
             }
-          </style>
+            .metaphor-page-container .selectt {
+                display: none;
+                margin-top: 30px;
+            }
+            .metaphor-page-container .submit-button{
+                background-color: #e66c6c;
+                border: none;
+                border-radius: 5px;
+            }
+            @media (min-width: 768px){
+            .metaphor-page-container .results{
+                width: 700px;
+            }
+            }
+            label {
+                text-align: right;
+                clear: both;
+                float:left;
+                margin-right:15px;
+            }
+         </style>
     </head>
-    <script>
-    </script>
     <body>
         <div class="metaphor-page-container container-fluid pb-3">
-            <div class="row poster align-items-center">
+            <div class="row poster align-items-center mb-4">
                 <div class="col-7 text-center">
                     <h1 class="mb-4">Welcome to Metaphorize</h1>
                     <h2 class="details mx-auto text-muted">We can search <strong class="text-primary"> Metaphors</strong> for your songs for you.</h2>
@@ -44,22 +73,171 @@
                     <img class="logo-boy img-fluid" src="{{ boy_image }}">
                 </div>
             </div>
-            <div class="search-container py-5">
-                <div class="row mx-auto">
-                    <div class="col">
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Source">
+            <div class="search mx-auto mb-3">
+                <h5 class="text-center text-muted mb-4">Search your Metaphor by</h5>
+                <div class="row">
+                    <div class="col d-flex justify-content-center text-center">
+                        <label><input type="radio" name="search" id="source&target" value="sourcetarget"> Normal Search</label>
                     </div>
-                    <div class="col">
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Target">
-                    </div>
-                    <div class="col">
-                        <button class="btn btn-danger">Search</button>
+                    <div class="col d-flex justify-content-center text-center">
+                        <label><input type="radio" name="search" id="advance" value="advance"> Advanced Search</label>
                     </div>
                 </div>
-            </div>   
+            </div>
+            <div class="sourcetarget selectt twoselected mx-auto mb-4">
+                <div class="input-group">
+                    <form action="http://127.0.0.1:5000/" method="post">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <input type="text" class="source py-2 text-center rounded" name="source" placeholder="Source">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="target py-2 text-center rounded" name="target" placeholder="Target">
+                            </div>
+                            <div class="col">
+                                <input class ="submit-button px-4 py-2" type="submit" value="Search">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="advance selectt moreselected mx-auto mb-4">
+                <div class="input-group">
+                    <form action="http://127.0.0.1:5000/" method="post">
+                        <h5 class="text-muted mb-3">Filter By:</h5>
+                        <div class="mb-4">
+                            <label for="singer">Singer: </label>
+                            <select class="rounded py-2 px-2 text-center" name="singer" id="singer">
+                                <option value="Not Selected">-</option>
+                                <option value="Gunadasa Kapuge">Gunadasa Kapuge</option>
+                                <option value="H.R.Jothipala">H.R.Jothipala</option>
+                                <option value="Clarence Wijewardena">Clarence Wijewardena</option>
+                                <option value="Annesley Malawana">Annesley Malawana</option>
+                                <option value="Shreemathi Thilakarathna">Shreemathi Thilakarathna</option>
+                                <option value="Victor Rathnayaka">Victor Rathnayaka</option>
+                                <option value="Rookantha Gunathilaka">Rookantha Gunathilaka</option>
+                                <option value="Kasun Kalhara">Kasun Kalhara</option>
+                                <option value="Mohideen Beg">Mohideen Beg</option>
+                                <option value="Rukmani Devi">Rukmani Devi</option>
+                                <option value="Narada Disasekara">Narada Disasekara</option>
+                                <option value="Sanath Nandasiri">Sanath Nandasiri</option>
+                                <option value="Greshan Ananda">Greshan Ananda</option>
+                                <option value="Karunaratna Divulgane">Karunaratna Divulgane</option>
+                                <option value="Pradeep Rangana">Pradeep Rangana</option>
+                                <option value="Nanda Malani">Nanda Malani</option>
+                                <option value="Sujatha Attanayaka">Sujatha Attanayaka</option>
+                                <option value="Mervin Perera">Mervin Perera</option>
+                                <option value="Dhanapala Udawaththa">Dhanapala Udawaththa</option>
+                                <option value="Deepika Priyadarshani">Deepika Priyadarshani</option>
+                                <option value="Angelin Gunathilaka">Angelin Gunathilaka</option>
+                                <option value="T.M.Jayarathna">T.M.Jayarathna</option>
+                                <option value="Lakshman Wijesekara">Lakshman Wijesekara</option>
+                                <option value="Abeywardhana Balasooriya">Abeywardhana Balasooriya</option>
+                                <option value="Somathilaka Jayamaha">Somathilaka Jayamaha</option>
+                                <option value="Nelu Adhikari">Nelu Adhikari</option>
+                                <option value="Malani Bulathsinhala">Malani Bulathsinhala</option>
+                                <option value="Rohana Siriwardhana">Rohana Siriwardhana</option>
+                                <option value="Sunil Edirisinghe">Sunil Edirisinghe</option>
+                                <option value="Indrani Perera">Indrani Perera</option>
+                                <option value="Athma Liyanage">Athma Liyanage</option>
+                                <option value="Milton Mallawarachchi">Milton Mallawarachchi</option>
+                                <option value="Punya Kathriarachchi">Punya Kathriarachchi</option>
+                                <option value="Lalith Ponnamperuma">Lalith Ponnamperuma</option>
+                                <option value="Edward Jayakody">Edward Jayakody</option>
+                                <option value="Neela Wickramasinghe">Neela Wickramasinghe</option>
+                                <option value="Wijesiriwardana Polonnowita">Wijesiriwardana Polonnowita</option>
+                                <option value="Dharmarathna brothers">Dharmarathna brothers</option>
+                                <option value="Chamara Weerasinghe">Chamara Weerasinghe</option>
+                                <option value="Chandana Liyanarachchi">Chandana Liyanarachchi</option>
+                                <option value="Somasiri Fernando">Somasiri Fernando</option>
+                                <option value="Milton Perera">Milton Perera</option>
+                                <option value="Pradeepa Dharmadasa">Pradeepa Dharmadasa</option>
+                                <option value="Priya Sooriyasena">Priya Sooriyasena</option>
+                                <option value="Nirosha Virajini">Nirosha Virajini</option>
+                                <option value="Bandara Athauda">Bandara Athauda</option>
+                                <option value="Niranjala Sarojini">Niranjala Sarojini</option>
+                                <option value="Dayarathna Ranathunga">Dayarathna Ranathunga</option>
+                                <option value="Indrani Senarathna">Indrani Senarathna</option>
+                                <option value="Sisira Senarathna">Sisira Senarathna</option>
+                                <option value="Nirmala Ranathunga">Nirmala Ranathunga</option>
+                                <option value="Latha Walpola">Latha Walpola</option>
+                                <option value="Chandralekha Perera">Chandralekha Perera</option>
+                                <option value="A.M.Rajah">A.M.Rajah</option>
+                                <option value="Jamuna Rani">Jamuna Rani</option>
+                                <option value="Mohan Raj">Mohan Raj</option>
+                                <option value="Senanayaka Weraliyadda">Senanayaka Weraliyadda</option>
+                                <option value="Vijaya Kumarathunga">Vijaya Kumarathunga</option>
+                                <option value="Kalpana Kavindi">Kalpana Kavindi</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="genre">Genre: </label>
+                            <select class="rounded py-2 px-2 text-center" name="genre" id="genre">
+                                <option value="Not Selected">-</option>
+                                <option value="Classics">Classics</option>
+                                <option value="Old Pops">Old Pops</option>
+                                <option value="New Pop">New Pop</option>
+                                <option value="Golden Pop">Golden Pop</option>
+                                <option value="Duets">Duets</option>
+                                <option value="Golden Oldies">Golden Oldies</option>
+                                <option value="Inspirational">Inspirational</option>
+                                <option value="Movie Songs">Movie Songs</option>
+                                <option value="Current Songs">Current Songs</option>
+                                <option value="Request">Request</option>
+                                <option value="Buddhist songs">Buddhist songs</option>
+                                <option value="Classics">Classics</option>
+                                <option value="Calypso">Calypso</option>
+                                <option value="Group Songs">Group Songs</option>
+                            </select>
+                        </div>
+                        <h5 class="text-muted mb-4">Search By:</h5>
+                        <div class = "mb-4">
+                            <label for="source">Source</label>
+                            <input type="text" class="source py-2 rounded text-center" name="source" placeholder="Source">
+                        </div>
+                        <div class = "mb-4">
+                            <label for="target">Target</label>
+                            <input type="text" class="target py-2 rounded text-center ml-1" name="target" placeholder="Target">
+                        </div>
+                        <h5 class="text-muted mb-4">Additional Options:</h5>
+                        <div class = "mb-4">
+                            <label for="include">Metaphor Includes</label>
+                            <input type="text" class="include py-2 rounded text-center" name="include" placeholder="Include Word">
+                        </div>
+                        <div class = "mb-4">
+                            <label for="exclude">Metaphor Excludes</label>
+                            <input type="text" class="exclude py-2 rounded text-center" name="exclude" placeholder="Exclude Word">
+                        </div>
+                        <div class="text-center">
+                            <input class ="submit-button px-5 py-2" type="submit" value="Search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                            $('input[type="radio"]').click(function() {
+                                var inputValue = $(this).attr("value");
+                                var targetBox = $("." + inputValue);
+                                $(".selectt").not(targetBox).hide();
+                                $(targetBox).show();
+                            });
+                        });
+            </script>
             {% if hits %}
-            <h1>Helloooooooo</h1>    
-            {% endif %} 
+                <div class="card results mx-auto px-5 py-4">
+                    {% for hit in hits %}
+                        <h5>Song :  {{ hit.title }}</h5>
+                        {% for met in hit.Metaphors %}
+                            <h6>Metaphor: {{ met.Metaphor}}</h6>
+                            <h6>Metaphor Meaning: {{met.Meaning }}</h6>
+                            <br>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% elif hits == [] %}
+                <h4 class="text-center text-danger mt-5">No results found for your search item.</h4>
+            {% endif %}
         </div>
     </body>
 </html>

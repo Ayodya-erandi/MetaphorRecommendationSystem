@@ -34,7 +34,7 @@ configs = {
     },
     "mappings": {
         "properties": {
-            "review_title": {
+            "title": {
               "type": "text",
               "analyzer": "plain",
               "fields": {
@@ -52,7 +52,7 @@ configs = {
                 }
               }
             },
-            "review_body": {
+            "Singer_en": {
               "type": "text",
               "analyzer": "plain",
               "fields": {
@@ -70,21 +70,149 @@ configs = {
                 }
               }
             },
-            "product_id": {
-              "type": "keyword"
+            "Singer_si": {
+              "type": "text",
+              "analyzer": "plain",
+              "fields": { 
+                "inflections": {
+                  "type":  "text",
+                  "analyzer": "inflections"
+                }
+              }
             },
-            "language": {
-              "type": "keyword"
+            "Genre_en": {
+              "type": "text",
+              "analyzer": "plain",
+              "fields": {
+                "case_insensitive": {
+                  "type":  "text",
+                  "analyzer": "case_insensitive"
+                },
+                "inflections": {
+                  "type":  "text",
+                  "analyzer": "inflections"
+                },
+                "case_insensitive_and_inflections": {
+                  "type":  "text",
+                  "analyzer": "case_insensitive_and_inflections"
+                }
+              }
             },
-            "product_category": {
-              "type": "keyword"
+            "Genre_si": {
+              "type": "text",
+              "analyzer": "plain",
+              "fields": {
+                "inflections": {
+                  "type":  "text",
+                  "analyzer": "inflections"
+                }
+              }
             },
-            "stars": {
-              "type": "integer"
+            "Lyricist_en": {
+              "type": "text",
+              "analyzer": "plain",
+              "fields": {
+                "case_insensitive": {
+                  "type":  "text",
+                  "analyzer": "case_insensitive"
+                },
+                "inflections": {
+                  "type":  "text",
+                  "analyzer": "inflections"
+                },
+                "case_insensitive_and_inflections": {
+                  "type":  "text",
+                  "analyzer": "case_insensitive_and_inflections"
+                }
+              }
             },
-            "published_date": {
-              "type": "date",
-              "format": "MM/dd/yyyy"
+            "Lyricist_si": {
+              "type": "text",
+              "analyzer": "plain",
+              "fields": {
+                "inflections": {
+                  "type":  "text",
+                  "analyzer": "inflections"
+                }
+              }
+            },
+            "Composer_en": {
+              "type": "text",
+              "analyzer": "plain",
+              "fields": {
+                "case_insensitive": {
+                  "type":  "text",
+                  "analyzer": "case_insensitive"
+                },
+                "inflections": {
+                  "type":  "text",
+                  "analyzer": "inflections"
+                },
+                "case_insensitive_and_inflections": {
+                  "type":  "text",
+                  "analyzer": "case_insensitive_and_inflections"
+                }
+              }
+            },
+            "Composer_si": {
+              "type": "text",
+              "analyzer": "plain",
+              "fields": {
+                "inflections": {
+                  "type":  "text",
+                  "analyzer": "inflections"
+                }
+              }
+            },
+            "song_lyrics": {
+              "type": "text",
+              "analyzer": "plain",
+              "fields": {
+                "inflections": {
+                  "type":  "text",
+                  "analyzer": "inflections"
+                }
+              }
+            },
+            "Metaphors.Metaphor": {
+              "type": "text",
+              "analyzer": "plain",
+              "fields": {
+                "inflections": {
+                  "type":  "text",
+                  "analyzer": "inflections"
+                }
+              }
+            },
+            "Metaphors.Source domain": {
+              "type": "text",
+              "analyzer": "plain",
+              "fields": {
+                "inflections": {
+                  "type":  "text",
+                  "analyzer": "inflections"
+                }
+              }
+            },
+            "Metaphors.Target domain": {
+              "type": "text",
+              "analyzer": "plain",
+              "fields": {
+                "inflections": {
+                  "type":  "text",
+                  "analyzer": "inflections"
+                }
+              }
+            },
+            "Metaphors.Meaning": {
+              "type": "text",
+              "analyzer": "plain",
+              "fields": {
+                "inflections": {
+                  "type":  "text",
+                  "analyzer": "inflections"
+                }
+              }
             }
         }
     }
