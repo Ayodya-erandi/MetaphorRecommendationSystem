@@ -17,9 +17,9 @@ Following 10 metadata with the metaphors fo 150 songs are used to create the ind
 5. Composer
 6. song_lyrics
 7. Metaphor
-    8. Source domain
-    9. Target domain
-    10. Meaning of the metaphor
+8. Source domain
+9. Target domain
+10. Meaning of the metaphor
 
 ## Data
 
